@@ -186,7 +186,7 @@
                     </p>
                 </div>
                 <div class="items-center px-4 py-3 space-x-4">
-                    <button id="cancel-delete-btn" class="px-4 py-2 bg-gray-200 text-gray-800 text-base font-medium rounded-md w-24 shadow-sm hover:bg-gray-300">
+                    <button id="cancel-delete-btn" type="button" onclick="cancelDelete()" class="px-4 py-2 bg-gray-200 text-gray-800 text-base font-medium rounded-md w-24 shadow-sm hover:bg-gray-300">
                         Cancel
                     </button>
                     <button id="confirm-delete-btn" class="px-4 py-2 bg-red-600 text-white text-base font-medium rounded-md w-24 shadow-sm hover:bg-red-700">
@@ -294,6 +294,11 @@
             showModal('delete-modal');
         }
 
+        function cancelDelete() {
+            hideModal('delete-modal');
+            userIdToDelete = null;
+        }
+
         function navigate(event, pageId) {
             event.preventDefault();
             
@@ -314,7 +319,6 @@
 
             // Setup delete modal listeners
             const confirmBtn = document.getElementById('confirm-delete-btn');
-            const cancelBtn = document.getElementById('cancel-delete-btn');
 
             confirmBtn.onclick = () => {
                 if (userIdToDelete !== null) {
@@ -325,10 +329,6 @@
                 }
             };
 
-            cancelBtn.onclick = () => {
-                hideModal('delete-modal');
-                userIdToDelete = null;
-            };
         });
     </script>
 </body>
