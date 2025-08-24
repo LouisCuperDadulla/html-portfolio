@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BJMP HRIS - DHRD SME Portal</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-100 font-inter flex flex-col min-h-screen">
+
+  <!-- NAVBAR -->
+  <header class="bg-blue-700 text-white p-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold">BJMP HRIS - SME Portal</h1>
+    <nav class="space-x-4">
+      <a href="#" class="hover:underline">Home</a>
+      <a href="#" class="hover:underline">About</a>
+      <a href="#" class="hover:underline">Logout</a>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <div class="flex flex-1">
+
+    <!-- SIDEBAR -->
+    <aside class="w-64 bg-white shadow-md p-4">
+      <h2 class="text-lg font-semibold mb-4">Menu</h2>
+      <ul class="space-y-2">
+        <li><a href="#" class="block p-2 rounded hover:bg-blue-100">Dashboard</a></li>
+        <li><a href="#" class="block p-2 rounded hover:bg-blue-100">SME Documents</a></li>
+        <li><a href="#" class="block p-2 rounded hover:bg-blue-100">Reports</a></li>
+        <li><a href="#" class="block p-2 rounded hover:bg-blue-100">Settings</a></li>
+      </ul>
+    </aside>
+
+    <!-- MAIN AREA -->
+    <main class="flex-1 p-6 space-y-6">
+
+      <!-- Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="text-lg font-semibold">Total SMEs</h3>
+          <p class="text-2xl font-bold text-blue-600">120</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="text-lg font-semibold">Documents</h3>
+          <p class="text-2xl font-bold text-green-600">340</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="text-lg font-semibold">Pending Reviews</h3>
+          <p class="text-2xl font-bold text-red-600">15</p>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="bg-white rounded shadow p-4">
+        <h3 class="text-lg font-semibold mb-4">Recent SME Documents</h3>
+        <table class="w-full text-left border">
+          <thead>
+            <tr class="bg-gray-100">
+              <th class="p-2 border">Title</th>
+              <th class="p-2 border">Uploaded By</th>
+              <th class="p-2 border">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="p-2 border">SME Training Module</td>
+              <td class="p-2 border">Officer Juan</td>
+              <td class="p-2 border">Aug 20, 2025</td>
+            </tr>
+            <tr>
+              <td class="p-2 border">Health & Safety Guidelines</td>
+              <td class="p-2 border">Officer Maria</td>
+              <td class="p-2 border">Aug 18, 2025</td>
+            </tr>
+            <tr>
+              <td class="p-2 border">Inmate Education Program</td>
+              <td class="p-2 border">Officer Pedro</td>
+              <td class="p-2 border">Aug 15, 2025</td>
+            </tr>
+          </tbody>
+        </table>
+        <button onclick="showModal('upload-sme-document-modal')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded">
+          Upload New Document
+        </button>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-blue-700 text-white p-4 text-center">
+    &copy; 2025 BJMP HRIS - All Rights Reserved
+  </footer>
+
+  <!-- MODAL -->
+  <div id="upload-sme-document-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-96">
+      <h2 class="text-xl font-semibold mb-4">Upload SME Document</h2>
+      <input type="file" class="mb-4 block w-full border border-gray-300 rounded p-2">
+      <div class="flex justify-end gap-2">
+        <button onclick="closeModal('upload-sme-document-modal')" class="px-4 py-2 bg-gray-300 rounded">Cancel</button>
+        <button class="px-4 py-2 bg-green-500 text-white rounded">Upload</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
